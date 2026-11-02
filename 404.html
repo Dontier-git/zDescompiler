@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página no encontrada — GuardX</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#060a0f" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/guardx.css" />
+  <style>
+    .notfound {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .notfound__box { max-width: 520px; }
+    .notfound__code {
+      font-family: var(--mono);
+      font-size: clamp(4.5rem, 16vw, 8rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      background: linear-gradient(120deg, var(--brand), var(--brand-2) 70%, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .notfound h1 { margin-top: 10px; font-size: clamp(1.4rem, 4vw, 2rem); }
+    .notfound p { margin-top: 12px; color: var(--text-dim); }
+    .notfound__actions {
+      margin-top: 26px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .notfound__mark {
+      width: 58px; height: 58px;
+      margin: 0 auto 18px;
+      display: grid; place-items: center;
+      border-radius: 16px;
+      border: 1px solid rgba(46, 230, 168, 0.28);
+      background: linear-gradient(150deg, rgba(46, 230, 168, 0.16), rgba(53, 197, 240, 0.07));
+      color: var(--brand);
+    }
+    .notfound__mark svg { width: 28px; height: 28px; }
+  </style>
+</head>
+<body>
+  <main class="notfound">
+    <div class="notfound__box">
+      <div class="notfound__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3 4.5 6v5.5c0 4.6 3.2 7.9 7.5 9.5 4.3-1.6 7.5-4.9 7.5-9.5V6L12 3Z" />
+          <path d="m9.2 12.1 2 2 3.6-3.9" />
+        </svg>
+      </div>
+      <div class="notfound__code">404</div>
+      <h1>Esta ruta no existe</h1>
+      <p>La página que buscas no está en GuardX. Puede que el enlace esté mal escrito o que el archivo se haya movido.</p>
+      <div class="notfound__actions">
+        <a class="btn btn--primary" href="./">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 7.9 7.5 9.5 4.3-1.6 7.5-4.9 7.5-9.5V6L12 3Z" /></svg>
+          Volver al escáner
+        </a>
+        <a class="btn btn--ghost" href="./#reglas">Ver detecciones</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("guardx-theme");
+        if (saved) document.documentElement.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
